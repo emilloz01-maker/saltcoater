@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Saltcoater · Interaktiv model</title>
+<meta name="theme-color" content="#e9dfc6">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage"><canvas id="c"></canvas><div id="labels"></div></div>
+<header id="top">
+  <div class="kicker">Kontinuert fluid bed · enzymgranulat</div>
+  <h1>Saltcoater <span>· Interaktiv model</span></h1>
+</header>
+<aside id="sheet">
+  <button id="handle" aria-label="Vis/skjul panel"><span></span></button>
+  <nav class="tabs">
+    <button data-tab="dele" class="on">Dele</button>
+    <button data-tab="proces">Proces</button>
+    <button data-tab="visning">Visning</button>
+    <button data-tab="tal">Tal</button>
+  </nav>
+  <section data-pane="dele" class="pane on"><h3>Anlæggets dele</h3><ul id="partList"></ul></section>
+  <section data-pane="proces" class="pane">
+    <h3>Procesgennemgang</h3>
+    <div class="btns three"><button id="pPrev" class="big">◀ Forrige</button><button id="pPlay" class="big">▶ Afspil</button><button id="pNext" class="big">Næste ▶</button></div>
+    <ol id="stageList" class="proc"></ol>
+  </section>
+  <section data-pane="visning" class="pane">
+    <h3>Visning</h3>
+    <label class="row">Adskil dele <output id="exv">0 %</output></label><input type="range" id="explode" min="0" max="100" value="0">
+    <div class="btns">
+      <button id="bXray" class="big">◐ Røntgen</button>
+      <button id="bFlow" class="big on">● Partikelflow</button>
+      <button id="bLabels" class="big on">① Mærkater</button>
+      <button id="bReset" class="big">◎ Nulstil</button>
+    </div>
+    <p class="hint">Træk for at dreje · knib for at zoome · tryk på en del for at læse om den. Navne vises, når du zoomer ind.</p>
+  </section>
+  <section data-pane="tal" class="pane"><h3>Nøgletal</h3><div id="facts"></div>
+    <p class="hint">Tal mærket <b>Eksempel</b> er generelle lærebogsværdier.</p>
+    <a class="big link" href="https://emilloz01-maker.github.io/enzym-granulat/" target="_blank" rel="noopener">◉ Se granulatets lag i Enzym-granulat-appen</a>
+    <p class="hint">Generel baggrundsviden – ikke arbejdsinstruktion. 3D-modellen er en forenkling.</p>
+  </section>
+</aside>
+<div id="card" hidden>
+  <button id="cardX" aria-label="Luk">×</button>
+  <div class="num" id="cardNum">1</div>
+  <h2 id="cardTitle"></h2>
+  <p id="cardFn"></p>
+  <ul id="cardFacts"></ul>
+  <p class="ex" id="cardEx"></p>
+</div>
+<div id="load">Indlæser model…</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

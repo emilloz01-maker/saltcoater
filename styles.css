@@ -10,3 +10,4 @@
 .link{display:block;text-align:center;text-decoration:none;color:var(--ink);margin-top:10px;line-height:26px}
 #stagebar{position:fixed;left:50%;transform:translateX(-50%);top:calc(70px + env(safe-area-inset-top));background:rgba(236,226,200,.92);border:1px solid var(--ink);padding:4px 10px;font-size:13px;font-style:italic;white-space:nowrap}
 @media (min-width:900px){#stagebar{top:80px;left:calc(50% + 10px)}#facts dl{font-size:12px}}
+#disc{display:inline-block;margin-top:4px;font-size:11px;font-style:italic;background:rgba(236,226,200,.92);border:1px solid var(--acc);color:var(--acc);padding:2px 8px}
